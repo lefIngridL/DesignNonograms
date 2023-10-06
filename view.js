@@ -96,7 +96,8 @@ function updateViewSmall() {
     <h1 class="level">Level ${activePuzzle.id}</h1>
     <h2 id="life" class="level">Lives: ${lives}</h2>
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
-
+    <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level1.puzzles[A].grid)
+    ">Finish and download pattern</button>
     <table id="x3"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
    
@@ -123,7 +124,7 @@ function updateViewSmall() {
             if (j == 0 || k == 0) {
                 document.getElementById(ps).innerHTML += `
         
-            <td id=${psp}${ps} class="infoSquares"><span class="rowEdgex3"> <input id=${psp}${ps} class="inp" type="text"/></span></td>
+            <td id=${psp}${ps} class="infoSquares"><span class="rowEdgex3"></span></td>
             `;
             }
             else if (j != 0 && k != 0)
@@ -152,7 +153,7 @@ function updateViewSmall() {
         }
 
     }
-
+*/
 
     let columnId;
     for (let i = 1; i <= 3; i++) {
@@ -163,7 +164,7 @@ function updateViewSmall() {
             console.log(activePuzzle.rows[i - 1][nums]);
             document.getElementById(cellId).innerHTML += `<p>${activePuzzle.rows[i - 1][nums]}</p>`;
         }
-    }*/
+    }
 
 
 
@@ -181,7 +182,11 @@ function updateViewMedium() {
     <h1 class="level">level ${activePuzzle.id}</h1>
     <h2 id="life" class="level">Lives: ${lives}</h2>
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
-
+    <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level2.puzzles[B].grid)
+    ">Finish and download pattern</button>
+    <button onclick="genTrueFalseArr(); genTrueFalseArrCol()">place row numbers</button>
+    <button onclick="genTrueFalseArrCol();">place column numbers</button>
+    
     <table id="x5"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
 
@@ -208,7 +213,7 @@ function updateViewMedium() {
             if (j == 0 || k == 0) {
                 document.getElementById(ps).innerHTML += `
             
-                <td id=${psp}${ps} class="infoSquares"><span class="spanx5"><input id=${psp}${ps} class="inp" type="text"/></span></td>
+                <td id=${psp}${ps} class="infoSquares"><span class="spanx5"></span></td>
                 `;
             }
             else if (j != 0 && k != 0)
@@ -232,9 +237,9 @@ function updateViewMedium() {
             document.getElementById(cellId).innerHTML += `<p>${activePuzzle.columns[i - 1][nums]}</p>`;
         }
 
-    }
+    }*/
 
-
+/*
     let columnId;
     for (let i = 1; i <= 5; i++) {
         columnId = "x0" + "y" + i;
@@ -258,7 +263,8 @@ function updateViewLarge() {
     <h1 class="level">level ${activePuzzle.id}</h1>
     <h2 id="life" class="level">Lives: ${lives}</h2>
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
-
+    <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level3.puzzles[C].grid)
+    ">Finish and download pattern</button>
     <table id="x10"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
 
@@ -333,7 +339,7 @@ function updateViewXL() {
     <h1 class="level">level ${activePuzzle.id}</h1>
     <h2 id="life" class="level">Lives: ${lives}</h2>
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
-    <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level4.puzzles[0].grid)
+    <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level4.puzzles[D].grid)
     ">Finish and download pattern</button>
     <table id="x15"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>

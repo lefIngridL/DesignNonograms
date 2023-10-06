@@ -31,7 +31,7 @@ function fill(square, smallLevels) {
     }
     else if (myButton.innerText == "╳" && square.style.color == "black") {
         square.style.color = "white";
-
+        activePuzzle.grid[ps].correct = false;
         activePuzzle.grid[ps].state = "empty";
 
         //console.log(levelObj.levels[0].level1.puzzles[0].grid[0][ps].state);
@@ -54,7 +54,7 @@ function fill(square, smallLevels) {
         square.style.backgroundColor = "white";
         square.style.color = "white";
         //console.log("see?");
-
+        activePuzzle.grid[ps].correct = false;
         activePuzzle.grid[ps].state = "empty";
         //console.log(levelObj.levels[0].level1.puzzles[0].grid[0][ps].state);
     }
@@ -220,4 +220,329 @@ function downloadNonogram(grid) {
     a.href = url;
     a.download = 'nonogram.json';
     a.click();
+}
+
+let row1 = [];
+let row2 = [];
+let row3 = [];
+let row4 = [];
+let row5 = [];
+let column1 = [];
+let column2 = [];
+let column3 = [];
+let column4 = [];
+let column5 = [];
+let pass;
+//let myRow;
+function genTrueFalseArr(){
+for(let j=1; j<6; j++){ 
+    //myRow = row+j   
+for(let i = 1; i<6; i++){
+    pass = "x" + i + "y" +j;
+    if(j == 1){
+        row1.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+    
+    if(j == 2){
+        row2.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+    if(j == 3){
+        row3.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+    }
+    if(j == 4){
+        row4.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+    }
+    if(j == 5){
+        row5.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+    }
+
+}}
+console.log(row1, row2, row3, row4, row5);
+/*let myRow;
+for(let i = 1; i<6; i++){
+myRow = "row" + i;
+console.log(myRow);
+getNumbers(myRow);
+}*/
+getNumbers(row1);
+getNumbers(row2);
+getNumbers(row3);
+getNumbers(row4);
+getNumbers(row5);
+placeNumbers();
+//getNumbers(row1, row2, row3, row4, row5);
+}
+
+
+function genTrueFalseArrCol(){
+for(let j=1; j<6; j++){ 
+    //myRow = row+j   
+for(let i = 1; i<6; i++){
+    pass = "x" + i + "y" +j;
+    if(i == 1){
+        column1.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+    
+    if(i == 2){
+        column2.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+    if(i == 3){
+        column3.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+    }
+    if(i == 4){
+        column4.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+    }
+    if(i == 5){
+        column5.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+    }
+
+}}
+console.log(column1, column2, column3, column4, column5);
+/*let myRow;
+for(let i = 1; i<6; i++){
+myRow = "row" + i;
+console.log(myRow);
+getNumbers(myRow);
+}*/
+getNumbersCol(column1);
+getNumbersCol(column2);
+getNumbersCol(column3);
+getNumbersCol(column4);
+getNumbersCol(column5);
+placeNumbersCol();
+//getNumbers(row1, row2, row3, row4, row5);
+}
+
+let results1 = []
+let results2 = []
+let results3 = []
+let results4 = []
+let results5 = []
+let counter = 0;
+let resultN = [];
+let n=1;
+function getNumbers(row){
+if(row == row1){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        counter++;
+    }
+    else {
+        if(counter !== 0) {
+            results1.push(counter);
+            counter = 0;
+        }
+    }
+}
+if(counter !== 0){
+    results1.push(counter);
+}
+counter = 0;
+console.log(results1);}
+else if(row == row2){   
+for(let  i= 0; i< row.length; i++){
+    if(row[i]){
+        counter++;
+    }
+    else {
+        if(counter !== 0) {
+            results2.push(counter);
+            counter = 0;
+        }
+    }
+}
+if(counter !== 0){
+    results2.push(counter);
+}
+counter = 0;
+console.log(results2);}
+else if(row == row3){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        counter++;
+    }
+    else {
+        if(counter !== 0) {
+            results3.push(counter);
+            counter = 0;
+        }
+    }
+}
+if(counter !== 0){
+    results3.push(counter);
+}
+counter= 0;
+console.log(results3);}
+else if(row == row4){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        counter++;
+    }
+    else {
+        if(counter !== 0) {
+            results4.push(counter);
+            counter = 0;
+        }
+    }
+}
+if(counter !== 0){
+    results4.push(counter);
+}
+counter = 0;
+console.log(results4);}
+else if(row == row5){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        counter++;
+    }
+    else {
+        if(counter !== 0) {
+            results5.push(counter);
+            counter = 0;
+        }
+    }
+}
+if(counter !== 0){
+    results5.push(counter);
+}
+counter = 0;
+console.log(results5);}
+resultN[0] = results1;
+resultN[1] = results2;
+resultN[2] = results3;
+resultN[3] = results4;
+resultN[4] = results5;
+
+}
+let colresults1 = []
+let colresults2 = []
+let colresults3 = []
+let colresults4 = []
+let colresults5 = []
+let colcounter = 0;
+let colresultN = [];
+let coln=1;
+function getNumbersCol(row){
+if(row == column1){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        colcounter++;
+    }
+    else {
+        if(colcounter !== 0) {
+            colresults1.push(colcounter);
+            colcounter = 0;
+        }
+    }
+}
+if(colcounter !== 0){
+    colresults1.push(colcounter);
+}
+colcounter = 0;
+console.log(colresults1);}
+else if(row == column2){   
+for(let  i= 0; i< row.length; i++){
+    if(row[i]){
+        colcounter++;
+    }
+    else {
+        if(colcounter !== 0) {
+            colresults2.push(colcounter);
+            colcounter = 0;
+        }
+    }
+}
+if(colcounter !== 0){
+    colresults2.push(colcounter);
+}
+colcounter = 0;
+console.log(colresults2);}
+else if(row == column3){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        colcounter++;
+    }
+    else {
+        if(colcounter !== 0) {
+            colresults3.push(colcounter);
+            colcounter = 0;
+        }
+    }
+}
+if(colcounter !== 0){
+    colresults3.push(colcounter);
+}
+colcounter= 0;
+console.log(colresults3);}
+else if(row == column4){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        colcounter++;
+    }
+    else {
+        if(colcounter !== 0) {
+            colresults4.push(colcounter);
+            colcounter = 0;
+        }
+    }
+}
+if(colcounter !== 0){
+    colresults4.push(colcounter);
+}
+colcounter = 0;
+console.log(colresults4);}
+else if(row == column5){   
+for(let i = 0; i< row.length; i++){
+    if(row[i]){
+        colcounter++;
+    }
+    else {
+        if(colcounter !== 0) {
+            colresults5.push(colcounter);
+            colcounter = 0;
+        }
+    }
+}
+if(colcounter !== 0){
+    colresults5.push(colcounter);
+}
+colcounter = 0;
+console.log(colresults5);}
+colresultN[0] = colresults1;
+colresultN[1] = colresults2;
+colresultN[2] = colresults3;
+colresultN[3] = colresults4;
+colresultN[4] = colresults5;
+
+}
+let columnId;
+let rowId;
+let cellId
+function placeNumbers(){
+    
+    for (let i = 1; i <= 5; i++) {
+        columnId = "x0" + "y" + i;
+        cellId = columnId + i;
+        document.getElementById(columnId).innerHTML = `<div id=${cellId} class="columnEdgex5"></div>`;
+        for (nums in resultN[i-1]) {
+            console.log(resultN[i - 1][nums]);
+            document.getElementById(cellId).innerHTML += `<p>${resultN[i - 1][nums]}</p>`;
+        }
+    }}
+    function placeNumbersCol(){
+    //let rowId;
+    //let cellId;
+    for (let i = 1; i <= 5; i++) {
+        rowId = "x" + i + "y0";
+        cellId = rowId + i;
+        console.log(rowId);
+        document.getElementById(rowId).innerHTML = `<div id=${cellId} class="rowEdgex5"></div>`;
+
+        for (let i = 1; i <= 5; i++) {
+            columnId = "x0" + "y" + i;
+            cellId = columnId + i;
+            document.getElementById(columnId).innerHTML = `<div id=${cellId} class="columnEdgex5"></div>`;
+            for (nums in resultN[i-1]) {
+                console.log(resultN[i - 1][nums]);
+                document.getElementById(cellId).innerHTML += `<p>${resultN[i - 1][nums]}</p>`;
+            }
+        }
+
+    }
 }
