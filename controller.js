@@ -222,6 +222,11 @@ function downloadNonogram(grid) {
     a.click();
 }
 
+function placeEdgeNr(puzzle){
+    genTrueFalseArr(puzzle);
+    genTrueFalseArrCol(puzzle);
+}
+
 let row1 = [];
 let row2 = [];
 let row3 = [];
@@ -234,24 +239,24 @@ let column4 = [];
 let column5 = [];
 let pass;
 //let myRow;
-function genTrueFalseArr(){
+function genTrueFalseArr(puzzle){
 for(let j=1; j<6; j++){ 
     //myRow = row+j   
 for(let i = 1; i<6; i++){
     pass = "x" + i + "y" +j;
     if(j == 1){
-        row1.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+        row1.push(puzzle.grid[pass].correct);} 
     
     if(j == 2){
-        row2.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+        row2.push(puzzle.grid[pass].correct);} 
     if(j == 3){
-        row3.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+        row3.push(puzzle.grid[pass].correct);
     }
     if(j == 4){
-        row4.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+        row4.push(puzzle.grid[pass].correct);
     }
     if(j == 5){
-        row5.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+        row5.push(puzzle.grid[pass].correct);
     }
 
 }}
@@ -272,24 +277,24 @@ placeNumbers();
 }
 
 
-function genTrueFalseArrCol(){
+function genTrueFalseArrCol(puzzle){
 for(let j=1; j<6; j++){ 
     //myRow = row+j   
 for(let i = 1; i<6; i++){
     pass = "x" + i + "y" +j;
     if(i == 1){
-        column1.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+        column1.push(puzzle.grid[pass].correct);} 
     
     if(i == 2){
-        column2.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);} 
+        column2.push(puzzle.grid[pass].correct);} 
     if(i == 3){
-        column3.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+        column3.push(puzzle.grid[pass].correct);
     }
     if(i == 4){
-        column4.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+        column4.push(puzzle.grid[pass].correct);
     }
     if(i == 5){
-        column5.push(levelObj.levels.level2.puzzles[0].grid[pass].correct);
+        column5.push(puzzle.grid[pass].correct);
     }
 
 }}
@@ -300,13 +305,11 @@ myRow = "row" + i;
 console.log(myRow);
 getNumbers(myRow);
 }*/
-getNumbersCol(column1);
-getNumbersCol(column2);
-getNumbersCol(column3);
-getNumbersCol(column4);
-getNumbersCol(column5);
-placeNumbersCol();
-//getNumbers(row1, row2, row3, row4, row5);
+
+getNumbersCol();
+
+//placeNumbersCol();
+//getNumbers(row1, row2, row3, row4, row5);*/
 }
 
 let results1 = []
@@ -418,99 +421,113 @@ let colresults5 = []
 let colcounter = 0;
 let colresultN = [];
 let coln=1;
-function getNumbersCol(row){
-if(row == column1){   
-for(let i = 0; i< row.length; i++){
-    if(row[i]){
-        colcounter++;
-    }
-    else {
-        if(colcounter !== 0) {
-            colresults1.push(colcounter);
-            colcounter = 0;
-        }
-    }
+let funcArray = [getNumbersCol1, getNumbersCol2, getNumbersCol3, getNumbersCol4, getNumbersCol5];
+function getNumbersCol(){
+for(funs in funcArray){
+    funcArray[funs]();
 }
-if(colcounter !== 0){
-    colresults1.push(colcounter);
+placeNumbersCol();
 }
-colcounter = 0;
-console.log(colresults1);}
-else if(row == column2){   
-for(let  i= 0; i< row.length; i++){
-    if(row[i]){
-        colcounter++;
-    }
-    else {
-        if(colcounter !== 0) {
-            colresults2.push(colcounter);
-            colcounter = 0;
-        }
-    }
-}
-if(colcounter !== 0){
-    colresults2.push(colcounter);
-}
-colcounter = 0;
-console.log(colresults2);}
-else if(row == column3){   
-for(let i = 0; i< row.length; i++){
-    if(row[i]){
-        colcounter++;
-    }
-    else {
-        if(colcounter !== 0) {
-            colresults3.push(colcounter);
-            colcounter = 0;
-        }
-    }
-}
-if(colcounter !== 0){
-    colresults3.push(colcounter);
-}
-colcounter= 0;
-console.log(colresults3);}
-else if(row == column4){   
-for(let i = 0; i< row.length; i++){
-    if(row[i]){
-        colcounter++;
-    }
-    else {
-        if(colcounter !== 0) {
-            colresults4.push(colcounter);
-            colcounter = 0;
-        }
-    }
-}
-if(colcounter !== 0){
-    colresults4.push(colcounter);
-}
-colcounter = 0;
-console.log(colresults4);}
-else if(row == column5){   
-for(let i = 0; i< row.length; i++){
-    if(row[i]){
-        colcounter++;
-    }
-    else {
-        if(colcounter !== 0) {
-            colresults5.push(colcounter);
-            colcounter = 0;
-        }
-    }
-}
-if(colcounter !== 0){
-    colresults5.push(colcounter);
-}
-colcounter = 0;
-console.log(colresults5);}
-colresultN[0] = colresults1;
-colresultN[1] = colresults2;
-colresultN[2] = colresults3;
-colresultN[3] = colresults4;
-colresultN[4] = colresults5;
 
+function getNumbersCol1(){
+     
+    for(let i = 0; i< column1.length; i++){
+        if(column1[i]){
+            colcounter++;
+        }
+        else {
+            if(colcounter !== 0) {
+                colresults1.push(colcounter);
+                colcounter = 0;
+            }
+        }
+    }
+    if(colcounter !== 0){
+        colresults1.push(colcounter);
+    }
+    colcounter = 0;
+    console.log(colresults1);
+    colresultN[0] = colresults1;
 }
+function getNumbersCol2(){    
+    for(let  i= 0; i< column2.length; i++){
+        if(column2[i]){
+            colcounter++;
+        }
+        else {
+            if(colcounter !== 0) {
+                colresults2.push(colcounter);
+                colcounter = 0;
+            }
+        }
+    }
+    if(colcounter !== 0){
+        colresults2.push(colcounter);
+    }
+    colcounter = 0;
+    console.log(colresults2); 
+    colresultN[1] = colresults2;}
+
+function getNumbersCol3(){
+     
+    for(let i = 0; i< column3.length; i++){
+        if(column3[i]){
+            colcounter++;
+        }
+        else {
+            if(colcounter !== 0) {
+                colresults3.push(colcounter);
+                colcounter = 0;
+            }
+        }
+    }
+    if(colcounter !== 0){
+        colresults3.push(colcounter);
+    }
+    colcounter= 0;
+    console.log(colresults3);
+    colresultN[2] = colresults3;}
+
+function getNumbersCol4(){
+    
+    for(let i = 0; i< column4.length; i++){
+        if(column4[i]){
+            colcounter++;
+        }
+        else {
+            if(colcounter !== 0) {
+                colresults4.push(colcounter);
+                colcounter = 0;
+            }
+        }
+    }
+    if(colcounter !== 0){
+        colresults4.push(colcounter);
+    }
+    colcounter = 0;
+    console.log(colresults4);
+    colresultN[3] = colresults4;}
+
+function getNumbersCol5(){
+   
+    for(let i = 0; i< column5.length; i++){
+        if(column5[i]){
+            colcounter++;
+        }
+        else {
+            if(colcounter !== 0) {
+                colresults5.push(colcounter);
+                colcounter = 0;
+            }
+        }
+    }
+    if(colcounter !== 0){
+        colresults5.push(colcounter);
+    }
+    colcounter = 0;
+    console.log(colresults5);
+    colresultN[4] = colresults5;}
+
 let columnId;
 let rowId;
 let cellId
@@ -525,9 +542,10 @@ function placeNumbers(){
             document.getElementById(cellId).innerHTML += `<p>${resultN[i - 1][nums]}</p>`;
         }
     }}
-    function placeNumbersCol(){
+    /*function placeNumbersCol(){
     //let rowId;
     //let cellId;
+    
     for (let i = 1; i <= 5; i++) {
         rowId = "x" + i + "y0";
         cellId = rowId + i;
@@ -540,8 +558,24 @@ function placeNumbers(){
             document.getElementById(columnId).innerHTML = `<div id=${cellId} class="columnEdgex5"></div>`;
             for (nums in resultN[i-1]) {
                 console.log(resultN[i - 1][nums]);
-                document.getElementById(cellId).innerHTML += `<p>${resultN[i - 1][nums]}</p>`;
+                document.getElementById(cellId).innerHTML += `<p>${colresultN[i - 1][nums]}</p>`;
             }
+        }
+
+    }
+}*/
+
+function placeNumbersCol(){
+    let rowId;
+    let cellId;
+    for (let i = 1; i <6; i++) {
+        rowId = "x" + i + "y0";
+        cellId = rowId + i;
+        console.log(rowId);
+        document.getElementById(rowId).innerHTML = `<div id=${cellId} class="rowEdgex5"></div>`;
+        for (nums in colresultN[i - 1]) {
+            console.log(colresultN[i - 1][nums]);
+            document.getElementById(cellId).innerHTML += `<p>${colresultN[i - 1][nums]}</p>`;
         }
 
     }

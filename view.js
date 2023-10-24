@@ -98,6 +98,7 @@ function updateViewSmall() {
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
     <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level1.puzzles[A].grid)
     ">Finish and download pattern</button>
+    <button onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
     <table id="x3"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
    
@@ -184,8 +185,9 @@ function updateViewMedium() {
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
     <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level2.puzzles[B].grid)
     ">Finish and download pattern</button>
-    <button onclick="genTrueFalseArr(); genTrueFalseArrCol()">place row numbers</button>
-    <button onclick="genTrueFalseArrCol();">place column numbers</button>
+    <button onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
+    
+    
     
     <table id="x5"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
@@ -237,9 +239,9 @@ function updateViewMedium() {
             document.getElementById(cellId).innerHTML += `<p>${activePuzzle.columns[i - 1][nums]}</p>`;
         }
 
-    }*/
+    }
 
-/*
+
     let columnId;
     for (let i = 1; i <= 5; i++) {
         columnId = "x0" + "y" + i;
