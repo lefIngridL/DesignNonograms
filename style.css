@@ -66,10 +66,19 @@ th{
     cursor: pointer;
     background-color: white;
 }
+
+#placeBtn{
+    max-height: 5dvh;
+}
+
+#dwnLoadBtn{
+    max-height: 8dvh;
+}
+
 #x3{
     grid-area: 2/4;
-    height: 63dvh;
     width: 63dvh;
+    height: 63dvh;
 }
 #x5{
     grid-area: 2/4;
@@ -77,25 +86,61 @@ th{
     width: 63dvh;
 }
 #x10{
-    grid-area: 2/4;
-    height: 63dvh;
-    width: 63dvh;
+    grid-area: 1/3;
+    margin-top: 11dvh;
+    margin-left: 15dvh;
+    height: 73dvh;
+    width: 73dvh;
 }
 #x15{
-    grid-area: 2/4;
-    height: 63dvh;
-    width: 63dvh;
+    grid-column: 3;
+    grid-row: 1;
+    height: 73dvh;
+    width: 83dvh;
+    margin-top: 11dvh;
+    margin-bottom: 20dvh;
+    margin-left: 9dvh;
+    
 }
 
-.squares{
-    width: 1dvh;
+.squaresx3{
+    
+   
+    
+    padding: 0%;
+    margin: 0%;
+    border-color: black;
+    color: white;
+}
+.squaresx5{
+    
+   
+    
+    padding: 0%;
+    margin: 0%;
+    border-color: black;
+    color: white;
+}
+.squaresx10{
+    
+   
+    
+    padding: 0%;
+    margin: 0%;
+    border-color: black;
+    color: white;
+}
+.squaresx15{
+    
+   height: 4dvh;
+   width: 4.5dvh;
+    
     padding: 0%;
     margin: 0%;
     border-color: black;
     color: white;
 }
 .infoSquares{
-    width: 5dvh;
     padding: 0%;
     margin: 0%;
     border-color: black;
@@ -106,6 +151,19 @@ th{
     
 }
 
+.leftColumn{
+    background-color: wheat;
+    min-width: 6dvh;
+    max-height: 8dvh;
+}
+
+.topRow{
+    background-color: wheat;
+    max-width: 5dvh;
+    min-height: 10dvh;
+    
+    
+}
 
 .spanx3{
     margin: 18%;
@@ -143,6 +201,7 @@ th{
     font-size: 4dvh;
     margin: 10%;
     padding: 1dvh;
+    width: auto;
 }
 .rowEdgex5{
     display: flex;
@@ -150,7 +209,7 @@ th{
     margin: 30%;
     font-size: 3dvh;
     padding: 0dvh;
-    width: 1dvh;
+    width: auto;
     
 }
 p{
@@ -166,6 +225,8 @@ p{
     margin: 30%;
     padding: 0dvh;
     max-height: 1dvh;
+    min-width: 5dvh;
+    
 }
 .rowEdgex10{
     display: flex;
@@ -189,15 +250,16 @@ p{
     flex-direction: column;
     flex-flow: column;
     flex-wrap: wrap;
+    
     margin: 0%;
-    font-size: 3dvh;
+    font-size: 2dvh;
     padding: 0dvh;
 }
 .columnEdgex15{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    font-size: 3dvh;
+    justify-content: space-evenly;
+    font-size: 2dvh;
     
 }
 

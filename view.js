@@ -97,8 +97,8 @@ function updateViewSmall() {
     <h2 id="life" class="level">Lives: ${lives}</h2>
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
     <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level1.puzzles[A].grid)
-    ">Finish and download pattern</button>
-    <button onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
+    ;downloadNumbers(activePuzzle.rows, activePuzzle.columns)">Finish and download pattern</button>
+    <button id="placeBtn" onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
     <table id="x3"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
    
@@ -127,11 +127,12 @@ function updateViewSmall() {
         
             <td id=${psp}${ps} class="infoSquares"><span class="rowEdgex3"></span></td>
             `;
+            getEdge(psp, ps);
             }
             else if (j != 0 && k != 0)
                 document.getElementById(ps).innerHTML += `
         
-        <td id=${psp}${ps} class="squares" onclick="fill(this)"><span class="spanx3">╳</span></td>
+        <td id=${psp}${ps} class="squaresx3" onclick="fill(this)"><span class="spanx3">╳</span></td>
         `;
 
             //let cell = document.getElementById(psp + ps);
@@ -155,7 +156,7 @@ function updateViewSmall() {
 
     }
 */
-
+/*
     let columnId;
     for (let i = 1; i <= 3; i++) {
         columnId = "x0" + "y" + i;
@@ -165,7 +166,7 @@ function updateViewSmall() {
             console.log(activePuzzle.rows[i - 1][nums]);
             document.getElementById(cellId).innerHTML += `<p>${activePuzzle.rows[i - 1][nums]}</p>`;
         }
-    }
+    }*/
 
 
 
@@ -185,7 +186,7 @@ function updateViewMedium() {
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
     <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level2.puzzles[B].grid)
     ">Finish and download pattern</button>
-    <button onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
+    <button id="placeBtn" onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
     
     
     
@@ -217,11 +218,12 @@ function updateViewMedium() {
             
                 <td id=${psp}${ps} class="infoSquares"><span class="spanx5"></span></td>
                 `;
+                getEdge(psp, ps);
             }
             else if (j != 0 && k != 0)
                 document.getElementById(ps).innerHTML += `
             
-            <td id=${psp}${ps} class="squares" onclick="fill(this)"><span class="spanx5">╳</span></td>
+            <td id=${psp}${ps} class="squaresx5" onclick="fill(this)"><span class="spanx5">╳</span></td>
             `;
         }
 
@@ -267,6 +269,8 @@ function updateViewLarge() {
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
     <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level3.puzzles[C].grid)
     ">Finish and download pattern</button>
+    <button id="placeBtn" onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
+
     <table id="x10"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
 
@@ -292,13 +296,14 @@ function updateViewLarge() {
             if (j == 0 || k == 0) {
                 document.getElementById(ps).innerHTML += `
             
-                <td id=${psp}${ps} class="infoSquares"><span class="spanx10"><input id=${psp}${ps} class="inp" type="text"/></span></td>
+                <td id=${psp}${ps} class="infoSquares"><span class="spanx10"></span></td>
                 `;
+                getEdge(psp, ps);
             }
             else if (j != 0 && k != 0)
                 document.getElementById(ps).innerHTML += `
             
-            <td id=${psp}${ps} class="squares" onclick="fill(this)"><span class="spanx10">╳</span></td>
+            <td id=${psp}${ps} class="squaresx10" onclick="fill(this)"><span class="spanx10">╳</span></td>
             `;
         }
 
@@ -343,6 +348,8 @@ function updateViewXL() {
     <button id="homeBtn" onclick="updateViewStart()"><=HOME</button>
     <button id="dwnLoadBtn" onclick="downloadNonogram(levelObj.levels.level4.puzzles[D].grid)
     ">Finish and download pattern</button>
+    <button id="placeBtn" onclick="placeEdgeNr(activePuzzle)">place row numbers</button>
+
     <table id="x15"></table>
     <button id="fillBtn" class="btn" onclick="mode(this)">╳</button>
 
@@ -368,13 +375,14 @@ function updateViewXL() {
             if (j == 0 || k == 0) {
                 document.getElementById(ps).innerHTML += `
             
-                <td id=${psp}${ps} class="infoSquares"><span class="spanx15"><input id=${psp}${ps} class="inp" type="text"/></span></td>
+                <td id=${psp}${ps} class="infoSquares"><span class="spanx15"></span></td>
                 `;
+                getEdge(psp, ps);
             }
             else if (j != 0 && k != 0)
                 document.getElementById(ps).innerHTML += `
             
-            <td id=${psp}${ps} class="squares" onclick="fill(this)"><span class="spanx15">╳</span></td>
+            <td id=${psp}${ps} class="squaresx15" onclick="fill(this)"><span class="spanx15">╳</span></td>
             `;
         }
 

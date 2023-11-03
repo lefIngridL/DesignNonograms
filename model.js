@@ -24,6 +24,7 @@ const levelObj = {
             puzzles: [
                 {
                     id: 1.1,
+                    size: 3,
                     rows: [[1], [3], [1, 1]],
                     columns: [[3], [1], [2]],
                     grid: {
@@ -43,6 +44,7 @@ const levelObj = {
                 },
                 {
                     id: 1.2,
+                    size: 3,
                     rows: [[1], [1], [2]],
                     columns: [[0], [1], [3]],
                     grid: {
@@ -68,6 +70,7 @@ const levelObj = {
             puzzles: [
                 {
                     id: 2.1,
+                    size: 5,
                     rows: [[4], [1, 2], [2, 1], [1, 2], [2, 1]],
                     columns: [[3, 1], [1, 3], [1], [2, 2], [3]],
                     grid:
@@ -106,6 +109,7 @@ const levelObj = {
                 },
                 {
                     id: 2.2,
+                    size: 5,
                     rows: [[1], [1,1], [1, 1], [1,1,1], [1,1,1]],
                     columns: [[2], [2], [1, 2], [2], [2]],
                     grid:
@@ -149,6 +153,7 @@ const levelObj = {
             puzzles: [
                 {
                     id: 3.1,
+                    size: 10,
                     rows: [[1,1], [3,1,3], [1, 3, 1], [1, 1], [2, 1], [4, 1], [2, 1], [8], [7], [7,3]],
                     columns: [[3], [1], [2], [1, 1], [], [], [], [], [], []],
                     grid:
@@ -266,16 +271,17 @@ const levelObj = {
                         x3y10: { "state": "empty", "correct": false },
                         x4y10: { "state": "empty", "correct": false },
                         x5y10: { "state": "empty", "correct": false },
-                        x1y10: { "state": "empty", "correct": false },
-                        x2y10: { "state": "empty", "correct": false },
-                        x3y10: { "state": "empty", "correct": false },
-                        x4y10: { "state": "empty", "correct": false },
-                        x5y10: { "state": "empty", "correct": false },
+                        x6y10: { "state": "empty", "correct": false },
+                        x7y10: { "state": "empty", "correct": false },
+                        x8y10: { "state": "empty", "correct": false },
+                        x9y10: { "state": "empty", "correct": false },
+                        x10y10: { "state": "empty", "correct": false },
                     }
 
                 },
                 {
                     id: 3.2,
+                    size: 10,
                     rows: [[1], [2], [1, 1], [1, 1], [], [], [], [], [], []],
                     columns: [[2], [1], [1, 1], [1, 1], [], [], [], [], [], []],
                     grid:
@@ -408,6 +414,7 @@ const levelObj = {
             puzzles: [
                 {
                     id: 4.1,
+                    size: 15,
                     rows: [[1,1], [3,1,3], [1, 3, 1], [1, 1], [2, 1], [4, 1], [2, 1], [8], [7], [7,3], [4, 3, 1], [1, 1, 3], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]],
                     columns: [[3], [3,1], [1, 1, 1], [10], [8, 1], [7], [4], [1, 3, 1], [3, 7], [1, 5, 1], [1, 4], [3], [1, 1], [3,3], [1,1]],
                     grid:
@@ -672,6 +679,7 @@ const levelObj = {
                 },
                 {
                     id: 4.2,
+                    size: 15,
                     rows: [[1], [2], [2], [1, 1], [1, 1], [], [], [], [], [], [], [], [], [], []],
                     columns: [[2], [1], [2], [1, 1], [1, 1], [], [], [], [], [], [], [], [], [], []],
                     grid:
