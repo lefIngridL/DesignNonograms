@@ -120,7 +120,7 @@ function evaluate(square) {
     }
 
 
-    console.log(correct);
+    //console.log(correct);
     if (correct == "false" && lives > 0) {
         lives = lives - 1;
         document.getElementById("life").innerHTML = "Lives:" + ' ' + lives;
@@ -203,10 +203,10 @@ function count() {
     let count = 0;
     for (num in rows) {
         let place = rows[num];
-        console.log(place);
+        //console.log(place);
         for (int in place) {
             let nr = place[int];
-            console.log(nr);
+           // console.log(nr);
             count += nr;
 
         }
@@ -253,7 +253,7 @@ let column15 = [];
 let pass;
 //let myRow;
 function genTrueFalseArr(puzzle) {
-    console.log(puzzle.size);
+    //console.log(puzzle.size);
     for (let j = 1; j <= puzzle.size; j++) {
         //myRow = row+j   
         for (let i = 1; i <= puzzle.size; i++) {
@@ -307,7 +307,7 @@ function genTrueFalseArr(puzzle) {
 
         }
     }
-    console.log(row1, row2, row3, row4, row5);
+    //console.log(row1, row2, row3, row4, row5);
     /*let myRow;
     for(let i = 1; i<6; i++){
     myRow = "row" + i;
@@ -388,7 +388,7 @@ function genTrueFalseArrCol(puzzle) {
 
         }
     }
-    console.log(column1, column2, column3, column4, column5);
+  //  console.log(column1, column2, column3, column4, column5);
     /*let myRow;
     for(let i = 1; i<6; i++){
     myRow = "row" + i;
@@ -437,7 +437,7 @@ function getNumbers(row, puzzle) {
             results1.push(counter);
         }
         counter = 0;
-        console.log(results1);
+        //console.log(results1);
     }
     //-------------------------
     else if (row == row2) {
@@ -456,7 +456,7 @@ function getNumbers(row, puzzle) {
             results2.push(counter);
         }
         counter = 0;
-        console.log(results2);
+        //console.log(results2);
     }
     //-----------------------------
     else if (row == row3) {
@@ -475,7 +475,7 @@ function getNumbers(row, puzzle) {
             results3.push(counter);
         }
         counter = 0;
-        console.log(results3);
+       // console.log(results3);
     }
     //------------------------------------
     else if (row == row4) {
@@ -494,7 +494,7 @@ function getNumbers(row, puzzle) {
             results4.push(counter);
         }
         counter = 0;
-        console.log(results4);
+      //  console.log(results4);
     }
     //-------------------------------------------
     else if (row == row5) {
@@ -513,7 +513,7 @@ function getNumbers(row, puzzle) {
             results5.push(counter);
         }
         counter = 0;
-        console.log(results5);
+        //console.log(results5);
     }
     //--------------------------------------
     else if (row == row6) {
@@ -532,7 +532,7 @@ function getNumbers(row, puzzle) {
             results6.push(counter);
         }
         counter = 0;
-        console.log(results6);
+        //console.log(results6);
     }
     //--------------------------------------
     else if (row == row7) {
@@ -551,7 +551,7 @@ function getNumbers(row, puzzle) {
             results7.push(counter);
         }
         counter = 0;
-        console.log(results7);
+        //console.log(results7);
     }
     //--------------------------------------
     else if (row == row8) {
@@ -570,7 +570,7 @@ function getNumbers(row, puzzle) {
             results8.push(counter);
         }
         counter = 0;
-        console.log(results8);
+        //console.log(results8);
     }
     //--------------------------------------
     else if (row == row9) {
@@ -589,7 +589,7 @@ function getNumbers(row, puzzle) {
             results9.push(counter);
         }
         counter = 0;
-        console.log(results9);
+        //console.log(results9);
     }
     //--------------------------------------
     else if (row == row10) {
@@ -608,7 +608,7 @@ function getNumbers(row, puzzle) {
             results10.push(counter);
         }
         counter = 0;
-        console.log(results10);
+        //console.log(results10);
     }
     //--------------------------------------
     else if (row == row11) {
@@ -627,7 +627,7 @@ function getNumbers(row, puzzle) {
             results11.push(counter);
         }
         counter = 0;
-        console.log(results11);
+        //console.log(results11);
     }
     //--------------------------------------
     else if (row == row12) {
@@ -646,7 +646,7 @@ function getNumbers(row, puzzle) {
             results12.push(counter);
         }
         counter = 0;
-        console.log(results12);
+       // console.log(results12);
     }
     //--------------------------------------
     else if (row == row13) {
@@ -665,7 +665,7 @@ function getNumbers(row, puzzle) {
             results13.push(counter);
         }
         counter = 0;
-        console.log(results13);
+        //console.log(results13);
     }
     //--------------------------------------
     else if (row == row14) {
@@ -684,7 +684,7 @@ function getNumbers(row, puzzle) {
             results14.push(counter);
         }
         counter = 0;
-        console.log(results14);
+        //console.log(results14);
     }
     //--------------------------------------
     else if (row == row15) {
@@ -703,7 +703,7 @@ function getNumbers(row, puzzle) {
             results15.push(counter);
         }
         counter = 0;
-        console.log(results15);
+        //console.log(results15);
     }
     //----------------------------------------
     resultN[0] = results1;
@@ -785,7 +785,7 @@ function getNumbersCol2() {
         colresults2.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults2);
+    //console.log(colresults2);
     colresultN[1] = colresults2;
 }
 
@@ -806,7 +806,7 @@ function getNumbersCol3() {
         colresults3.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults3);
+    //console.log(colresults3);
     colresultN[2] = colresults3;
 }
 
@@ -827,7 +827,7 @@ function getNumbersCol4() {
         colresults4.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults4);
+    //console.log(colresults4);
     colresultN[3] = colresults4;
 }
 
@@ -848,7 +848,7 @@ function getNumbersCol5() {
         colresults5.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults5);
+    //console.log(colresults5);
     colresultN[4] = colresults5;
 }
 
@@ -870,7 +870,7 @@ function getNumbersCol6() {
         colresults6.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults6);
+    //console.log(colresults6);
     colresultN[5] = colresults6;
 }
 //------------------------------------------------
@@ -891,7 +891,7 @@ function getNumbersCol7() {
         colresults7.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults7);
+    //console.log(colresults7);
     colresultN[6] = colresults7;
 }
 //------------------------------------------------
@@ -912,7 +912,7 @@ function getNumbersCol8() {
         colresults8.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults8);
+    //console.log(colresults8);
     colresultN[7] = colresults8;
 }
 //------------------------------------------------
@@ -933,7 +933,7 @@ function getNumbersCol9() {
         colresults9.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults9);
+    //console.log(colresults9);
     colresultN[8] = colresults9;
 }
 //------------------------------------------------
@@ -954,7 +954,7 @@ function getNumbersCol10() {
         colresults10.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults10);
+    //console.log(colresults10);
     colresultN[9] = colresults10;
 }
 //------------------------------------------------
@@ -975,7 +975,7 @@ function getNumbersCol11() {
         colresults11.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults11);
+    //console.log(colresults11);
     colresultN[10] = colresults11;
 }
 //------------------------------------------------
@@ -996,7 +996,7 @@ function getNumbersCol12() {
         colresults12.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults12);
+    //console.log(colresults12);
     colresultN[11] = colresults12;
 }
 //------------------------------------------------
@@ -1017,7 +1017,7 @@ function getNumbersCol13() {
         colresults13.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults13);
+    //console.log(colresults13);
     colresultN[12] = colresults13;
 }
 //------------------------------------------------
@@ -1038,7 +1038,7 @@ function getNumbersCol14() {
         colresults14.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults5);
+    //console.log(colresults5);
     colresultN[13] = colresults14;
 }
 //------------------------------------------------
@@ -1059,7 +1059,7 @@ function getNumbersCol15() {
         colresults15.push(colcounter);
     }
     colcounter = 0;
-    console.log(colresults15);
+    //console.log(colresults15);
     colresultN[14] = colresults15;
 }
 //------------------------------------------------
@@ -1070,10 +1070,10 @@ let cellId
 function placeNumbers(puzzle) {
     let currentClass = "columnEdgex" + puzzle.size;
     for (let i = 0; i < puzzle.size; i++) {
-        console.log(resultN[i]);
-        if (puzzle.size == 3) {
-            levelObj.levels.level1.puzzles[A].rows[i] = resultN[i]; 
-        }
+       // console.log(resultN[i]);
+        
+            activePuzzle.rows[i] = resultN[i]; 
+    
 
     }
     for (let i = 1; i <= puzzle.size; i++) {
@@ -1082,10 +1082,10 @@ function placeNumbers(puzzle) {
         cellId = columnId + "z" + i;
         document.getElementById(columnId).innerHTML = `<div id=${cellId} class=${currentClass}></div>`;
         for (nums in resultN[i - 1]) {
-            console.log(resultN[i - 1][nums]);
+            //console.log(resultN[i - 1][nums]);
             document.getElementById(cellId).innerHTML += `<p>${resultN[i - 1][nums]}</p>`;
         }
-    }console.log(levelObj.levels.level1.puzzles[A].rows);
+    }//console.log(levelObj.levels.level1.puzzles[A].rows);
 }
 /*function placeNumbersCol(){
 //let rowId;
@@ -1116,9 +1116,10 @@ function placeNumbersCol(puzzle) {
     let currentClass = "rowEdgex" + puzzle.size;
     for (let i = 0; i < puzzle.size; i++) {
         console.log(colresultN[i]);
-        if (puzzle.size == 3) {
-            levelObj.levels.level1.puzzles[A].columns[i] = colresultN[i]; 
-        }
+        
+            //levelObj.levels.level1.puzzles[A].columns[i] = colresultN[i]; 
+            activePuzzle.columns[i] = colresultN[i]; 
+        
 
     }
     for (let i = 1; i <= puzzle.size; i++) {
@@ -1131,7 +1132,9 @@ function placeNumbersCol(puzzle) {
             document.getElementById(cellId).innerHTML += `<p>${colresultN[i - 1][nums]}</p>`;
         }
 
-    }console.log(levelObj.levels.level1.puzzles[A].columns);
+    }
+    console.log(levelObj.levels.level1.puzzles[A].columns);
+    console.log(activePuzzle);
 }
 
 function getEdge(x, y) {
@@ -1164,12 +1167,21 @@ function downloadNonogram(grid) {
     a.click();
 }
 function downloadNumbers(row, column) {
-    let jsonString = JSON.stringify(row, column);
+    downloadNumbersCol(column);
+    let jsonString = JSON.stringify(row);
     let blob = new Blob([jsonString], { type: "application/json" });
     let url = URL.createObjectURL(blob);
-
     let a = document.createElement('a');
     a.href = url;
-    a.download = 'nonogramNrs.json';
+    a.download = 'nonogramNrsRow.json';
+    a.click();
+}
+function downloadNumbersCol(column) {
+    let jsonString = JSON.stringify(column);
+    let blob = new Blob([jsonString], { type: "application/json" });
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement('a');
+    a.href = url;
+    a.download = 'nonogramNrsCol.json';
     a.click();
 }
